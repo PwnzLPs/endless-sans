@@ -54,7 +54,7 @@ BattleScene.prototype.update = function(delta) {
 			document.getElementById("se_damage").play();
 			if (this.difficulty == "easy") {
 				heart.hp = Math.max(0, heart.hp - delta);
-				document.getElementById("hp").innerHTML = (heart.hp + 0.00499999999).toFixed(2);
+				document.getElementById("hp").innerHTML = heart.hp.toFixed(2);
 			} else {
 				heart.hp = 0;
 				document.getElementById("hp").innerHTML = "0";
@@ -125,16 +125,19 @@ BattleScene.prototype.resetGame = function(diff_level) {
 			heart.tolerance = 0;
 			this.play_speed = 1;
 			document.getElementById("love").innerHTML = "1";
+			document.getElementById("sans").src = "./img/sans.gif";
 			break;
 		case "medium":
 			heart.tolerance = 2;
 			this.play_speed = 1;
 			document.getElementById("love").innerHTML = "10";
+			document.getElementById("sans").src = "./img/sans.gif";
 			break;
 		case "hard":
 			heart.tolerance = 2;
 			this.play_speed = 1.5;
 			document.getElementById("love").innerHTML = "99";
+			document.getElementById("sans").src = "./img/sanseye.gif";
 			break;
 	}
 	document.getElementById("select_difficulty").className = "closed";
